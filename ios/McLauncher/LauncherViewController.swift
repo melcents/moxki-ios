@@ -232,7 +232,7 @@ final class LauncherViewController: UIViewController {
             "platform": "ios",
             "engine": false,
             "androidUrl": "https://malaycity.com/mobile/MALAYCITY.apk",
-            "note": "Klien GTA SA untuk iOS sedang dibangunkan. Buat masa ini, main di Android.",
+            "note": "Разрабатывается клиент GTA SA для iOS. На этот раз играйте на Android.",
         ])
     }
 
@@ -446,7 +446,7 @@ final class LauncherViewController: UIViewController {
             }
             guard let srv = self.serverInfo(),
                   !((srv["host"] as? String) ?? "").isEmpty else {
-                self.emit("playError", ["message": "Maklumat server tiada - sambung internet & cuba lagi"])
+                self.emit("playError", ["message": "Информация о сервере отсутствует - подключитесь к Интернету и повторите попытку"])
                 return
             }
             self.prefs.set(nick, forKey: "nick")
@@ -520,7 +520,7 @@ extension LauncherViewController: WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String,
                  initiatedByFrame frame: WKFrameInfo,
                  completionHandler: @escaping () -> Void) {
-        let a = UIAlertController(title: "MALAYCITY", message: message, preferredStyle: .alert)
+        let a = UIAlertController(title: "ARIES", message: message, preferredStyle: .alert)
         a.addAction(UIAlertAction(title: "OK", style: .default) { _ in completionHandler() })
         present(a, animated: true)
     }
